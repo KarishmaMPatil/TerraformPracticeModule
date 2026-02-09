@@ -46,7 +46,7 @@ resource "aws_security_group"  "webserversg" {
 }
 
 data "aws_security_group" "sg_gui" {
-   name = "default"
+   name = "efs-security"
 }
 
 
