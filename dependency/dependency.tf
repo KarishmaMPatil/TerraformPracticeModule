@@ -20,7 +20,7 @@ resource "aws_instance" "webserver" {
 } 
 
 
-resource "aws_security_group"  "webserversg" {
+resource "aws_security_group"  "webserversg" {    #user created security group
       
       ingress { 
         from_port = 80
@@ -46,7 +46,7 @@ resource "aws_security_group"  "webserversg" {
 }
 
 data "aws_security_group" "sg_gui" {
-   name = "efs-security"
+   name = "efs-security"              #security grp name from aws console
 }
 
 
