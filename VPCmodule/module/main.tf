@@ -1,6 +1,6 @@
  module "ec2" {
     source = "/home/karipatil/TerraformPracticeModule/VPCmodule/main/EC2"
-    webserver_ami = "var.webserver_ami"    
+    webserver_ami = var.webserver_ami   
     webserver_instance_type = "t3.micro"
     webserver_keyname = "ubuntu"
     webserver_disable_api_termination = false
