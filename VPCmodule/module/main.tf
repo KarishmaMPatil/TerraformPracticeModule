@@ -1,9 +1,9 @@
  module "ec2" {
     source = "/home/karipatil/TerraformPracticeModule/VPCmodule/main/EC2"
     webserver_ami = var.webserver_ami   
-    webserver_instance_type = var.webserver_instance_type
-    webserver_keyname = var.webserver_key_name
-    webserver_disable_api_termination = var.webserver_disable_termination
+    webserver_instance_type = "t3.micro"
+   webserver_keyname = "ubuntu"
+   webserver_disable_api_termination = false
     webserver_sg = module.vpc.webserversg   #attache security group to ec2 module name vpc webserversg from output block
     webserver_subnetA = module.vpc.subnet_id  #subnet id from output block 
 
