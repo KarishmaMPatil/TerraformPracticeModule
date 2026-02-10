@@ -1,0 +1,3 @@
+variable "webserver_ami" {
+  
+}
