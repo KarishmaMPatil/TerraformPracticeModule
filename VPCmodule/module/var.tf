@@ -1,4 +1,3 @@
 variable "webserver_ami" {
   
 }
-
