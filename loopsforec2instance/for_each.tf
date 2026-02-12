@@ -13,13 +13,15 @@ resource "aws_instance" "webserver" {
 }
 
 variable "aws_ami" {
-   default = ["ami-0c1fe732b5494dc14" , "ami-0b6c6ebed2801a5cb" , "ami-06b5375e3af24939c" ]   #list data type      
+   default = ["ami-0c1fe732b5494dc14" , "ami-0b6c6ebed2801a5cb" , "ami-06b5375e3af24939c" ]   #list data type ami for linux, ubuntu,windows     
 }
 
 output "aws_public_ip" {
     value = [for amiid in var.aws_ami:
              aws_instance.webserver[amiid].public_ip]
 }
+
+#instead of amiid we can write any name
 
 #for each will be used where instances have diff configs 
 #for loop will be used where u need outputs of the instances which are created using loops
