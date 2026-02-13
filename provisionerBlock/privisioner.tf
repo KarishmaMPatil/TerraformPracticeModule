@@ -6,8 +6,7 @@ provider "aws" {
 
 resource "aws_instance" "webserver2" {
     ami = "ami-0c1fe732b5494dc14"     #amzon linux
-    vpc_security_group_ids = ["sg-09e7339607d2e77ae"]
-    instance_type = "t3.micro"
+    vpc_security_group_ids = ["sg-09e7339607d2e77ae"]  #default security groupid
     key_name = "tf"
     
     provisioner "file" {
