@@ -10,7 +10,7 @@ data "aws_vpc" "default" {
 data "aws_subnet" "default_subnet" {
   filter {
     name   = "availability-zone"
-    values = ["us-east-1a"]  #change az
+    values = ["us-east-1b"]  #change az
   }
 }
 
