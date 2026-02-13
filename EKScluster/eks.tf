@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1" # Change to your desired region
+  region = "us-east-1"  #Change to your desired region
   profile = "configs"
 }
 
@@ -10,8 +10,15 @@ data "aws_vpc" "default" {
 data "aws_subnet" "default_subnet" {
   filter {
     name   = "availability-zone"
-    values = ["us-east-1b"]  #change az
+    values = ["us-east-1a"]  #change az
   }
+
+  data "aws_subnet" "subnet_1b" {
+  filter {
+    name   = "availability-zone"
+    values = ["us-east-1b"]
+  }
+}
 }
 
 resource "aws_iam_role" "eks_role" {
