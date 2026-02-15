@@ -82,7 +82,7 @@ resource "aws_instance" "ec2_vpc1" {
   ami           = "ami-0c1fe732b5494dc14"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.subnet1.id
-  vpc_security_group_ids = [aws_security_group.sgui_vpc1.id]
+  vpc_security_group_ids = [aws_security_group.sgiu_vpc1.id]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -99,7 +99,7 @@ resource "aws_instance" "ec2_vpc2" {
   ami           = "ami-0c1fe732b5494dc14"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.subnet2.id
-  vpc_security_group_ids = [aws_security_group.sgui_vpc2.id]
+  vpc_security_group_ids = [aws_security_group.sgiu_vpc2.id]
 
   user_data = <<-EOF
               #!/bin/bash
