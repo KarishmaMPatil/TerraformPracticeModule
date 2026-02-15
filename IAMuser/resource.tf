@@ -9,7 +9,7 @@ resource "aws_iam_user_login_profile" "example" {
 }
 
 output "iam_user_password" {
-  value     = aws_iam_user_login_profile.example1.password
+  value     = aws_iam_user_login_profile.example.password
   sensitive = true
 }
 
