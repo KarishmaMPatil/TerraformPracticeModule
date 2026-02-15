@@ -13,13 +13,9 @@ data "aws_subnet" "default_subnet" {
     values = ["us-east-1a"]  #change az
   }
 
-  data "aws_subnet" "subnet_1b" {
-  filter {
-    name   = "availability-zone"
-    values = ["us-east-1b"]
-  }
+ 
 }
-}
+
 
 resource "aws_iam_role" "eks_role" {
   name = "eks-cluster-role"
