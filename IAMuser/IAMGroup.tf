@@ -41,3 +41,8 @@ resource "aws_iam_group_membership" "dev_membership" {
 
   group = aws_iam_group.dev_group.name
 }
+
+# 3 IAM users created
+# 1 group created
+# EC2 Full Access attached to group
+# All users added to group
