@@ -1,11 +1,9 @@
-
-
-# Create S3 Bucket
+#Create S3 Bucket
 resource "aws_s3_bucket" "website_bucket" {
   bucket = var.bucket_name
 }
 
-# Enable static website hosting
+#Enable static website hosting
 resource "aws_s3_bucket_website_configuration" "website_config" {
   bucket = aws_s3_bucket.website_bucket.id
 
@@ -14,7 +12,7 @@ resource "aws_s3_bucket_website_configuration" "website_config" {
   }
 }
 
-# Make bucket public
+#Make bucket public
 resource "aws_s3_bucket_public_access_block" "public_access" {
   bucket = aws_s3_bucket.website_bucket.id
 
@@ -24,7 +22,7 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
   restrict_public_buckets = false
 }
 
-# Bucket Policy
+#Bucket Policy
 resource "aws_s3_bucket_policy" "bucket_policy" {
   bucket = aws_s3_bucket.website_bucket.id
 
@@ -42,7 +40,7 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
   })
 }
 
-# Upload index.html file
+#Upload index.html file
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.website_bucket.id
   key          = "index.html"
